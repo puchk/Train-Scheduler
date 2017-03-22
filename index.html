@@ -9,7 +9,8 @@
 	<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
 	<!-- Firebase Reference -->
 	<script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
-
+	<!-- Moment -->
+	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 </head>
 <body>
   <div class="container">
@@ -21,34 +22,13 @@
 	      <tr>
 	        <th>Train Name</th>
 	        <th>Destination</th>
+	        <!-- <th>First Train</th> -->
 	        <th>Frequency</th>
 	        <th>Next Arrival</th>
 	        <th>Minutes Away</th>
 	      </tr>
 	    </thead>
-	    <tbody>
-	      <tr>
-	        <td>Trenton Express</td>
-	        <td>Trenton</td>
-	        <td>25</td>
-	        <td>05:35 PM</td>
-	        <td>10</td>
-	      </tr>
-	      <tr>
-	        <td>Oregon Trail</td>
-	        <td>Salem</td>
-	        <td>3600</td>
-	        <td>01:39 PM</td>
-	        <td>1154</td>
-	      </tr>
-	      <tr>
-	        <td>Midnight Carriage</td>
-	        <td>Philadelphia</td>
-	        <td>15</td>
-	        <td>05:35 AM</td>
-	        <td>10</td>
-	      </tr>
-	    </tbody>
+	    <tbody id="example"></tbody>
 	</table>
 	<form>
 	<div class="form-group">
@@ -61,11 +41,11 @@
 	</div> 
 	<div class="form-group">
 		<label for="firstTrain">First Train Time (HH:mm - military time)</label>
-		<input type="text" class="form-control" id="firstTrain">
+		<input type="time" class="form-control" id="firstTrain">
 	</div> 
 	<div class="form-group">
 		<label for="frequency">Frequency (min)</label>
-		<input type="text" class="form-control" id="frequency">
+		<input type="number" class="form-control" id="frequency">
 	</div> 
 	<button type="submit" class="btn btn-default" id="submitButton">Submit</button>
 </form>
